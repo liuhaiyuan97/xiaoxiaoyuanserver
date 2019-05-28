@@ -1,0 +1,49 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="xiaoxiaoyuan">
+    <output-path>$PROJECT_DIR$/classes/artifacts/xiaoxiaoyuan</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="xiaoxiaoyuanssm/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="xiaoxiaoyuanssm" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="gson-2.3.1.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="fastjson-1.2.9.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="standard.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-websocket-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-webmvc-portlet-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-webmvc-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-web-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-tx-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-test-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-oxm-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-orm-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-messaging-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-jms-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-jdbc-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-instrument-tomcat-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-instrument-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-expression-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-core-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-context-support-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-context-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-beans-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-aspects-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="spring-aop-4.3.7.RELEASE.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="mysql-connector-java-5.1.20-bin.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="mybatis-spring-1.3.2.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="mybatis-3.5.0.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="jstl-1.2.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-pool-1.5.4.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-logging-1.1.3.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-lang3-3.1.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-io-2.4.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-fileupload-1.2.2.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-dbcp-1.4.jar" module-name="xiaoxiaoyuanssm" />
+          <element id="library" level="module" name="commons-codec-1.9.jar" module-name="xiaoxiaoyuanssm" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

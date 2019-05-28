@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- namespace：映射器接口的全名 -->
+	<mapper namespace="com.project.dao.FriendsMapper">
+ 		
+	<resultMap type="com.project.entity.Friends" id="friendsMap">
+		<result column="fri_id1" property="fri_id1"/>
+		<result column="fri_id2" property="fri_id2"/>
+	</resultMap>
+	
+	<resultMap type="com.project.entity.Request" id="requestMap">
+		<id column="request_id" property="request_id"/>
+		<result column="request_sender_id" property="request_sender_id"/>
+		<result column="request_receiver_id" property="request_receiver_id"/>
+		<result column="request_tag" property="request_tag"/>
+	</resultMap>
+	
+	
+	<select id="findAllFriends" resultMap="friendsMap">
+		select * from friend where fri_id1=#{id} or fri_id2=#{id}
+	</select>
+
+	<delete id="deleteFriend">
+		delete from friend where fri_id1=#{id} and fri_id2=#{friendId} 
+	</delete>
+	
+	<insert id="insertRequest">
+		insert into request(request_sender_id,request_receiver_id,request_tag) values(#{id},#{friendId},0)
+	</insert>
+	
+	<select id="selectRequest" resultMap="requestMap">
+		select * from request where request_receiver_id=#{id} and request_tag=0
+	</select>
+	
+	<update id="updateRequest">
+		update request set request_tag=#{tag} where request_receiver_id=#{id} and request_sender_id=#{friendId}
+	</update>
+	
+	<insert id="insertFriend">
+		insert into friend values(#{friendId},#{id})
+	</insert>
+	
+	<select id="isFriend" resultMap="friendsMap">
+		select * from friend where (fri_id1=#{id} and fri_id2=#{friendId}) or (fri_id1=#{friendId} and fri_id2=#{id})	
+	</select>
+	
+	<select id="isRequest" resultMap="requestMap">
+		select * from request where (request_sender_id=#{id} and request_receiver_id=#{friendId} and request_tag=0) or (request_sender_id=#{friendId} and request_receiver_id=#{id} and request_tag=0)
+	</select>
+	
+	</mapper>

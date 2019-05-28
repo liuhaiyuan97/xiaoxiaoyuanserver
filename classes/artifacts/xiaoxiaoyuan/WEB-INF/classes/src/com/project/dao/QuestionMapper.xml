@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- namespace：映射器接口的全名 -->
+	<mapper namespace="com.project.dao.QuestionMapper">
+ 		<resultMap type="com.project.entity.Question" id="questionMap">
+ 			<id column="question_id" property="question_id"/>
+ 			<result column="question_name" property="question_name"/>
+ 			<result column="question_content" property="question_content"/>
+ 			<result column="question_evaluation" property="question_evaluation"/>
+ 			<result column="question_result" property="question_result"/>
+ 		</resultMap>
+	
+	<select id="selectQuestionByQid" resultMap="questionMap">
+		select * from questionbank where question_id=#{id}
+	</select>
+    
+
+	</mapper>

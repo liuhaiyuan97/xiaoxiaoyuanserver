@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- namespace：映射器接口的全名 -->
+	<mapper namespace="com.project.dao.UserMapper">
+ 
+	<resultMap type="com.project.entity.User" id="userMap">
+        <id column="user_id" property="user_id"/>
+        <result column="user_image" property="user_image"/>
+        <result column="user_name" property="user_name"/>
+        <result column="user_password" property="user_password"/>
+        <result column="user_sex" property="user_sex"/>
+        <result column="user_phone" property="user_phone"/>
+        <result column="user_email" property="user_email"/>
+        <result column="user_birthday" property="user_birthday"/>
+        <result column="user_current_floor" property="user_current_floor"/>
+        <result column="user_image" property="user_image"/>
+        <result column="user_praise" property="user_praise"/>
+    </resultMap>
+    
+    
+    <select id="login" resultMap="userMap">
+    	select * from user
+    	<where>
+    	    <if test="user_phone!=null and !user_phone.equals('')">
+    			and user_phone=#{user_phone} and user_password=#{password}
+    		</if>
+    		
+    		<if test="user_email!=null and !user_email.equals('')">
+    			and user_email=#{user_email} and user_password=#{password}
+    		</if>
+    	</where>
+    </select>
+    
+    <insert id="regist">
+    	insert into user(user_password
+    	<if test="user_phone!=null and !user_phone.equals('')">
+    		,user_phone
+    	</if>
+    	<if test="user_email!=null and !user_email.equals('')">
+    		,user_email
+    	</if>) values(#{password}
+    	<if test="user_phone!=null and !user_phone.equals('')">
+    		,#{user_phone}
+    	</if>
+    	<if test="user_email!=null and !user_email.equals('')">
+    		,#{user_email}
+    	</if>)
+    	
+    </insert>
+    
+    <select id="isExitPhone" resultMap="userMap">
+    	select * from user where user_phone=#{phone}
+    </select>
+    
+    
+    <select id="isExitEmail" resultMap="userMap">
+    	select * from user where user_email=#{email}
+    </select>
+    
+    <select id="FloorList" resultMap="userMap">
+    	select * from user order by user_current_floor desc
+    </select>
+    
+    <update id="updateUserImage">
+    	update user set user_image=#{image} where user_id=#{userid}
+    </update>
+    
+    <select id="showAllInfo" resultMap="userMap">
+    	select * from user where user_id=#{id}
+    </select>
+    
+    <update id="updateUserName">
+    	update user set user_name=#{info} where user_id=#{id}
+    </update>
+    
+    <update id="updateUserSex">
+    	update user set user_sex=#{info} where user_id=#{id}
+    </update>
+    
+    <update id="updateUserPhone">
+    	update user set user_phone=#{info} where user_id=#{id}
+    </update>
+    
+    <update id="updateUserEmail">
+    	update user set user_email=#{info} where user_id=#{id}
+    </update>
+    
+    <update id="updateUserBirthday">
+    	update user set user_birthday=#{info} where user_id=#{id}
+    </update>
+    
+    <select id="selectFloorByUserId" resultMap="userMap">
+    	select * from user where user_id=#{id}
+    </select>
+    
+    <update id="addUserFloor">
+    	update user set user_current_floor=#{floor} where user_id=#{id}
+    </update>
+
+	</mapper>
