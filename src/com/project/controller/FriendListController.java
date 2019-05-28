@@ -22,7 +22,7 @@ public class FriendListController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="findAllFriends",produces="text/plain;charset=utf-8")
+    @RequestMapping(value="findAllFriends")
     @ResponseBody
     public String findAllFriends(@RequestParam("id") int id) {
         List<Friends> list=friendsService.findAllFriends(id);
