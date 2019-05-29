@@ -58,5 +58,8 @@ public class FriendsServiceImpl implements FriendsService{
 		return friendsMapper.isRequest(id, friendId);
 	}
 
+	public List<Friends> findFriendsList(int id){
+		return friendsMapper.findFriendsList(id);
+	}
 	
 }

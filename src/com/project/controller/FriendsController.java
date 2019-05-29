@@ -145,5 +145,26 @@ public class FriendsController {
 			return "false";
 		}
 	}
+
+	@RequestMapping(value="findFriendsList")
+	@ResponseBody
+	public String findFriendsList(@RequestParam("id") int id) {
+		List<Friends> list=friendsService.findFriendsList(id);
+		List<Integer> intlist=new ArrayList<>();
+		for(int i=0;i<list.size();i++) {
+			if (list.get(i).getFri_id1()==id){
+				intlist.add(list.get(i).getFri_id2());
+			}else {
+				intlist.add(list.get(i).getFri_id1());
+			}
+		}
+		List<User> users=new ArrayList<>();
+		for(int i=0;i<intlist.size();i++) {
+			users.add(userService.showAllInfo(intlist.get(i)));
+		}
+		Gson gson=new Gson();
+		String userlist=gson.toJson(users);
+		return userlist;
+	}
 	
 	}

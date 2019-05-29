@@ -23,5 +23,7 @@ public interface FriendsService {
 	public Friends isFriend(int id,int friendId);
 	
 	public Request isRequest(int id,int friendId);
+
+	public List<Friends> findFriendsList(int id);
 	
 }

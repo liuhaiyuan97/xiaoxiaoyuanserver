@@ -49,5 +49,7 @@
 	<select id="isRequest" resultMap="requestMap">
 		select * from request where (request_sender_id=#{id} and request_receiver_id=#{friendId} and request_tag=0) or (request_sender_id=#{friendId} and request_receiver_id=#{id} and request_tag=0)
 	</select>
-	
+	<select id="findFriendsList" resultMap="friendsMap">
+		SELECT * from friend where fri_id1=#{id} or fri_id2=#{id} order by user_current_floor desc
+	</select>
 	</mapper>

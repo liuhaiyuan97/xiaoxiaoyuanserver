@@ -23,4 +23,6 @@ public interface FriendsMapper {
 	public Friends isFriend(@Param("id") int id,@Param("friendId") int friendId);
 	
 	public Request isRequest(@Param("id") int id,@Param("friendId") int friendId);
+
+	public List<Friends> findFriendsList(int id);
 }
